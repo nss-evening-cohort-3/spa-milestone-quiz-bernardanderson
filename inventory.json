@@ -12,15 +12,15 @@
     "model": "6",
     "year": "2011",
     "price": "13999",
-    "color": "CharcoalBlack",
-    "purchased": false,
+    "color": "Blue",
+    "purchased": true,
     "description": "This 2011 Mazda 6 has 45000 miles on it. Leather seats, missing drivers side mirror."
   }, {
     "make": "Toyota",
     "model": "Celica",
     "year": "1990",
     "price": "1200",
-    "color": "Maroon",
+    "color": "Crimson",
     "purchased": false,
     "description": "Although older, this celica has aged well. No rust, 85000 miles."
   }, {
@@ -28,15 +28,15 @@
     "model": "LeBaron",
     "year": "1984",
     "price": "399",
-    "color": "Gray",
-    "purchased": false,
+    "color": "DarkGreen",
+    "purchased": true,
     "description": "This classic LeBaron has only minor rust, a missing bumper and 186000 miles."
   }, {
     "make": "Subaru",
     "model": "Legacy",
     "year": "1997",
     "price": "499",
-    "color": "AngelGabrielBlue",
+    "color": "DarkOrchid",
     "purchased": false,
     "description": "Having seen better days, this Legacy has a dragging muffler, cracked rear axle but still runs."
   }]
