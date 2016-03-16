@@ -1,5 +1,7 @@
 body {
   box-sizing: border-box;
+  min-height: 2000px;
+  padding-top: 70px;
 }
 
 .col-md-4 {
