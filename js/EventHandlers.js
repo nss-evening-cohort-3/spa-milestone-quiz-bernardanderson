@@ -1,27 +1,28 @@
 var CarLot = (function(eventHandlers) {
 
+
   eventHandlers.activateEvents = function() {
 
     let carCardHolder = document.querySelector("#car-card-container");
 
-    let listOfCarCards = document.getElementsByClassName("round-card");
-
+    // A single event listener watching for a click event on anything in the car card holder div
     carCardHolder.addEventListener("click", function(event) {
-      console.log (event.target, event.currentTarget);
 
       event.stopPropagation();
-      if (event.target !== event.currentTarget) {
-        for (let i = 0; i < listOfCarCards.length; i++) {
-          if (listOfCarCards[i].style.borderWidth === "6px") {
-            listOfCarCards[i].style.borderWidth = "3px";
-          };
-        };
 
-        for (let i = 0; i < event.path.length; i++) {
-          if (event.path[i].id === "car-card-container") {
-            event.path[i-2].style.borderWidth = "6px";
-          } 
-        };
+      // Assigns the clicked target to a single variable
+      let clickedTarget = event.target;
+
+      // This checks to see that a div "row" or the main div container weren't clicked. If they 
+      //  were then do nothing because it is not a car card!
+      if (!clickedTarget.className.includes("row") && (event.target !== event.currentTarget)) {  
+
+        // Calls the function to reset the border and color of the car cards
+        CarLot.resetBorder();
+
+        // Call the function to enlarge the click car card and change it's background color
+        //  This send two arguments: ONLY the target element and the new color of the background.
+        CarLot.increaseBorder(clickedTarget, "lightgray")
       }
     });
   }

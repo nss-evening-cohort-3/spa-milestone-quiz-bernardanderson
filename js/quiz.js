@@ -9,12 +9,13 @@ function populatePage(sentInventory) {
   // Loop over each car in the inventory and populate the page
   for (var i = 0; i < sentInventory.length; i++) {
 
-    // Starting at 0, for every three cars cards in the inventory
+    // Starting at 0, for every three cars cards in the inventory,
     //  a new div with the class of "row" will be add to the DOM.
-    //  This keeps columns working on my tiny laptop screen 
+    //  This keeps "3 columns" working on most large screens
     if (i % 3 === 0) {
       var carCardRow = document.createElement("div");
       carCardRow.classList.add("row");
+      carCardRow.classList.add("row-bottom-margin-6");
       carCardContainer.appendChild(carCardRow);
     }
 
@@ -22,7 +23,7 @@ function populatePage(sentInventory) {
     var carCard = document.createElement("div");
     carCard.id = `car-card-${i}`;
     carCard.classList.add("col-md-4");
-    carCard.classList.add("round-card");
+    carCard.classList.add("border-width-3");
     carCard.classList.add("bg-warning");
     carCardRow.appendChild(carCard);
 
@@ -38,7 +39,7 @@ function populatePage(sentInventory) {
 
     // Sets the car card border color to the color of the car and also
     //  adds the color info to the car string
-    carCard.setAttribute("style", `border: 3px solid ${curCar['color']}`);
+    carCard.setAttribute("style", `border-color: ${curCar['color']}`);
     carCardString += `<p>This car comes in beautiful <span style="background:${curCar['color']}">${curCar['color']}</p>`;
 
     // This checks to see if the car is purchased and sets the 
@@ -56,10 +57,9 @@ function populatePage(sentInventory) {
     carCard.innerHTML += carCardString;
   };
 
-  // The event listeners once the DOM is loaded and populated
+  // The event listeners are added once the DOM is loaded and populated
   CarLot.activateEvents();
 }
 
-// Loads the inventory, and sends the callback function 
-//  to populatePage
+// Loads the inventory, and sends the callback function to populatePage
 CarLot.loadInventory(populatePage);
