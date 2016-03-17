@@ -6,7 +6,7 @@
     "price": "8999",
     "color": "FireBrick",
     "purchased": false,
-    "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+    "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats."
   }, {
     "make": "Mazda",
     "model": "6",
@@ -22,7 +22,7 @@
     "price": "1200",
     "color": "Crimson",
     "purchased": false,
-    "description": "Although older, this celica has aged well. No rust, 85000 miles."
+    "description": "Although older, this celica has aged well. Runs, has all doors, no rust, 85000 miles."
   }, {
     "make": "Chrysler",
     "model": "LeBaron",
