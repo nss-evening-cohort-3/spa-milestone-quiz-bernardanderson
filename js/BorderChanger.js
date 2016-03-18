@@ -1,9 +1,9 @@
 "use strict"
 
-var CarLot = (function(borderChanger) {
+var CarLot = ((borderChanger) => {
 
   // Resets the border of all the car cards
-  borderChanger.resetBorder = function() {
+  borderChanger.resetBorder = () => {
 
     // Sets an array of all the car cards on the DOM
     let listOfCarCards = document.getElementsByClassName("col-md-4");
@@ -24,7 +24,7 @@ var CarLot = (function(borderChanger) {
 //  selection (targeting the main div container holding all the car cards).  Since we could 
 //  only send the target and not the entire event, some DOM transversing needed to be done in 
 //  order to "find" the target/car card area clicked.
-  borderChanger.increaseBorder = function(sentTarget, sentBgColor) {
+  borderChanger.increaseBorder = (sentTarget, sentBgColor) => {
 
     // Sets an array of all the car cards on the DOM
     let listOfCarCards = document.getElementsByClassName("col-md-4");

@@ -1,27 +1,27 @@
 "use strict"
 
-function populatePage(sentInventory) {
+var populatePage = (sentInventory) => {
 
   // Gets the main container div for where the cards will be stored
-  var carCardContainer = document.getElementById("car-card-container");
+  let carCardContainer = document.getElementById("car-card-container");
 
   // Initializes the string where each cars' information will be stored
-  var carCardString = "";
+  let carCardString = "";
 
   // Loop over each car in the inventory and populate the page
-  for (var i = 0; i < sentInventory.length; i++) {
+  for (let i = 0; i < sentInventory.length; i++) {
 
     // Starting at car card 0, for every three cars cards in the inventory,
     //  a new div with the class of "row" will be add to the DOM.
     //  This keeps "3 columns" working on most larger screens
     if (i % 3 === 0) {
-      var carCardRow = document.createElement("div");
+      var carCardRow = document.createElement("div"); // This needs to be accessible outside the block
       carCardRow.classList.add("row");
       carCardContainer.appendChild(carCardRow);
     }
 
     // Builds the card for each car
-    var carCard = document.createElement("div");
+    let carCard = document.createElement("div");
     carCard.id = `car-card-${i}`;
     carCard.classList.add("col-md-4");
     carCard.classList.add("border-width-3");

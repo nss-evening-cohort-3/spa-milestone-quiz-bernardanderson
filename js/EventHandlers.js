@@ -1,15 +1,15 @@
 "use strict"
 
-var CarLot = (function(eventHandlers) {
+var CarLot = ((eventHandlers) => {
 
-  eventHandlers.activateEvents = function() {
+  eventHandlers.activateEvents = () => {
 
     let carCardHolder = document.querySelector("#car-card-container");
     let inputDescription = document.querySelector("#desc-input");
     let resetButton = document.querySelector("#reset-button");
 
     // A single event listener watching for a click event on anything in the car card holder div
-    carCardHolder.addEventListener("click", function(event) {
+    carCardHolder.addEventListener("click", (event) => {
 
       event.stopPropagation();
 
@@ -35,7 +35,7 @@ var CarLot = (function(eventHandlers) {
     });
 
     // This captures the text input from the input element in the navbar.
-    inputDescription.addEventListener("keyup", function() {
+    inputDescription.addEventListener("keyup", () => {
 
       // Selects the currently selected car card (if there is one).
       let carSelected = document.querySelector(".border-width-6");
@@ -59,9 +59,7 @@ var CarLot = (function(eventHandlers) {
     });
 
     // This reloads the page if the "Reset Button" is clicked
-    resetButton.addEventListener("click", function() {
-      document.location.reload(true);
-    });
+    resetButton.addEventListener("click", () => document.location.reload(true));
   }
 
   return eventHandlers;
