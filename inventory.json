@@ -29,7 +29,7 @@
     "year": "1984",
     "price": "399",
     "color": "DarkGreen",
-    "purchased": true,
+    "purchased": false,
     "description": "This classic LeBaron has only minor rust, a missing bumper and 186000 miles."
   }, {
     "make": "Subaru",
@@ -37,7 +37,7 @@
     "year": "1997",
     "price": "499",
     "color": "DarkOrchid",
-    "purchased": false,
+    "purchased": true,
     "description": "Having seen better days, this Legacy has a dragging muffler, cracked rear axle but still runs."
   }]
 }

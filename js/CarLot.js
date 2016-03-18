@@ -1,3 +1,5 @@
+"use strict"
+
 var CarLot = (function() {
 
   var inventory = [];
@@ -10,9 +12,6 @@ var CarLot = (function() {
 
     // Loads the json inventory and once loaded it executes the callback function sent to it.
     loadInventory: function(sentCallback){
-
-      // This clears the main container's HTML content (for a reset)
-      document.querySelector("#car-card-container").innerHTML = "";
 
       var inventoryLoader = new XMLHttpRequest();
 

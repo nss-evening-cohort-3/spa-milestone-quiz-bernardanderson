@@ -1,5 +1,6 @@
-var CarLot = (function(eventHandlers) {
+"use strict"
 
+var CarLot = (function(eventHandlers) {
 
   eventHandlers.activateEvents = function() {
 
@@ -22,8 +23,9 @@ var CarLot = (function(eventHandlers) {
         // Calls the function to reset the border and color of the car cards
         CarLot.resetBorder();
 
-        // Call the function to enlarge the click car card and change it's background color
-        //  This send two arguments: ONLY the target element and the new color of the background.
+        // Call the function to enlarge the clicked car card and change it's background color
+        //  This send two arguments: ONLY the target/clicked element and the new color 
+        //  of the background.
         CarLot.increaseBorder(clickedTarget, "lightgray");
 
         // Clears the input box, and puts the cursor into it
@@ -38,23 +40,27 @@ var CarLot = (function(eventHandlers) {
       // Selects the currently selected car card (if there is one).
       let carSelected = document.querySelector(".border-width-6");
 
-      // Checks to see if no car is selected, if true the textbox is cleared after each keypress
+      // Checks to see if no car is selected. If there isn't one selected the textbox
+      //  is cleared after each keypress
       if (carSelected === null) {
         inputDescription.value = "";
-      // Checks to see if the enter key is press, if true the textbox is cleared and blurred
+      // Checks to see if the enter key is press, if true the textbox is cleared and blurred 
+      //  and all the cards are unselected.
       } else if (event.keyCode === 13) {
         inputDescription.value = "";
         inputDescription.blur();
+        CarLot.resetBorder();
       // If no errors and a car is selected, their description is overwritten from the 
       // text input
       } else {
-      carSelectedInput = carSelected.childNodes[4];
-      carSelectedInput.innerHTML = `<p>Description: ${inputDescription.value}</p>`;
+      let carSelectedInput = carSelected.childNodes[4];
+      carSelectedInput.innerHTML = `<p class="aligned-left"><span class="text-big">Description:</span> ${inputDescription.value}</p>`;
       };
     });
 
+    // This reloads the page if the "Reset Button" is clicked
     resetButton.addEventListener("click", function() {
-      CarLot.loadInventory(populatePage);
+      document.location.reload(true);
     });
   }
 

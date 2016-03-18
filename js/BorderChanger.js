@@ -1,13 +1,16 @@
+"use strict"
+
 var CarLot = (function(borderChanger) {
 
-// Resets the border of all the car cards
+  // Resets the border of all the car cards
   borderChanger.resetBorder = function() {
+
     // Sets an array of all the car cards on the DOM
     let listOfCarCards = document.getElementsByClassName("col-md-4");
 
-    // Cycles through all the car cards on the DOM and if the card has the larger border
-    //  it is removed and replaced with the smaller border.  Any inline background color 
-    //  is removed which allows the css file's background to kick in.
+    // Cycles through all the car cards on the DOM and if the card has the larger border 
+    //  class it is removed and replaced with the smaller border.  Any inline background 
+    //  color is removed which allows the css file's background to kick in.
     for (let i = 0; i < listOfCarCards.length; i++) {
       if (listOfCarCards[i].className.includes("border-width-6")) {
         listOfCarCards[i].classList.remove("border-width-6");
