@@ -6,16 +6,13 @@ var CarLot = (function(borderChanger) {
     let listOfCarCards = document.getElementsByClassName("col-md-4");
 
     // Cycles through all the car cards on the DOM and if the card has the larger border
-    //  it is removed and replaced with the smaller border. The parent bootstrap div row's margin
-    //  is also adjusted so the card doesn't shift too much with the increased/decreased border.
-    //  Any inline background color is removed which allows the css files' background to kick in.
+    //  it is removed and replaced with the smaller border.  Any inline background color 
+    //  is removed which allows the css file's background to kick in.
     for (let i = 0; i < listOfCarCards.length; i++) {
       if (listOfCarCards[i].className.includes("border-width-6")) {
         listOfCarCards[i].classList.remove("border-width-6");
         listOfCarCards[i].classList.add("border-width-3");
         listOfCarCards[i].style.backgroundColor = "";
-        listOfCarCards[i].parentElement.classList.remove("row-bottom-margin-0");
-        listOfCarCards[i].parentElement.classList.add("row-bottom-margin-6");
       };
     };
   }
@@ -30,12 +27,8 @@ var CarLot = (function(borderChanger) {
     let listOfCarCards = document.getElementsByClassName("col-md-4");
 
     // This looks to see if the element clicked was actually the car card div and, if so,
-    //  increase border by adding a class and removes the margin on the parent row div to 
-    //  minimize the the shifting of the div card by increasing the border. It also adds the
-    //  background color passed to the function.
+    //  increase border by adding a class. It also adds the background color passed to the function.
     if (sentTarget.id.includes("car-card-")) {
-      sentTarget.parentElement.classList.remove("row-bottom-margin-6");
-      sentTarget.parentElement.classList.add("row-bottom-margin-0");
       sentTarget.classList.remove("border-width-3");
       sentTarget.classList.add("border-width-6");
       sentTarget.style.backgroundColor = sentBgColor;
@@ -52,11 +45,8 @@ var CarLot = (function(borderChanger) {
         sentTargetParentTree = sentTargetParentTree.parentElement;
       }
 
-    // This increase border by adding a class and removes the margin on the parent row div to 
-    //  minimize the the shifting of the div card by increasing the border. It also adds the
-    //  background color passed to the function.
-      sentTargetParentTree.parentElement.classList.remove("row-bottom-margin-6");
-      sentTargetParentTree.parentElement.classList.add("row-bottom-margin-0");
+    // This increases the border by adding a class. It also adds the background color passed 
+    //  to the function.
       sentTargetParentTree.classList.remove("border-width-3");
       sentTargetParentTree.classList.add("border-width-6");
       sentTargetParentTree.style.backgroundColor = sentBgColor;

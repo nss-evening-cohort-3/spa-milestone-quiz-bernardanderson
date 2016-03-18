@@ -1,27 +1,22 @@
+/*Styling mainly for Bootstrap Nav Bar*/
 body {
   box-sizing: border-box;
   min-height: 2000px;
   padding-top: 70px;
 }
 
-.row-bottom-margin-6 {
-  margin-bottom: 6px;
-}
-
-.row-bottom-margin-0 {
-  margin-bottom: 0px;
-}
-
+/*Styling for the enlarged border selected car card*/
 .border-width-6 {
   border-width: 6px;
   border-style: solid;
-  /*background-color: lightgray;*/
   border-radius: 5px;
+  height: 24rem;
 }
 
+/*Styling for the decreased car card border*/
 .border-width-3 {
   border-width: 3px;
   border-style: solid;
   border-radius: 5px;
+  height: 24rem;
 }
-

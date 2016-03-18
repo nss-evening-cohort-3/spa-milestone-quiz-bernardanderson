@@ -9,13 +9,12 @@ function populatePage(sentInventory) {
   // Loop over each car in the inventory and populate the page
   for (var i = 0; i < sentInventory.length; i++) {
 
-    // Starting at 0, for every three cars cards in the inventory,
+    // Starting at car card 0, for every three cars cards in the inventory,
     //  a new div with the class of "row" will be add to the DOM.
-    //  This keeps "3 columns" working on most large screens
+    //  This keeps "3 columns" working on most larger screens
     if (i % 3 === 0) {
       var carCardRow = document.createElement("div");
       carCardRow.classList.add("row");
-      carCardRow.classList.add("row-bottom-margin-6");
       carCardContainer.appendChild(carCardRow);
     }
 
@@ -43,9 +42,9 @@ function populatePage(sentInventory) {
     carCardString += `<p>This car comes in beautiful <span style="background:${curCar['color']}">${curCar['color']}</p>`;
 
     // This checks to see if the car is purchased and sets the 
-    //  string added to the car string appropriately
+    //  string added to the overall car string appropriately
     if (curCar["purchased"] === true) {
-      carCardString += `<p>We're sorry but this car is NOT available</p>`;
+      carCardString += `<p>We're sorry but this car is <strong>NOT</strong> available</p>`;
     } else {
       carCardString += `<p>BUY NOW! Supplies are limited!</p>`;
     };
@@ -60,6 +59,7 @@ function populatePage(sentInventory) {
   // The event listeners are added once the DOM is loaded and populated
   CarLot.activateEvents();
 }
+
 
 // Loads the inventory, and sends the callback function to populatePage
 CarLot.loadInventory(populatePage);

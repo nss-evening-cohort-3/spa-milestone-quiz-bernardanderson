@@ -3,11 +3,17 @@ var CarLot = (function() {
   var inventory = [];
 
   return {
+    // Return the car inventory when called
     getInventory: function() {
       return inventory;
     },
 
+    // Loads the json inventory and once loaded it executes the callback function sent to it.
     loadInventory: function(sentCallback){
+
+      // This clears the main container's HTML content (for a reset)
+      document.querySelector("#car-card-container").innerHTML = "";
+
       var inventoryLoader = new XMLHttpRequest();
 
       inventoryLoader.addEventListener("load", function() {
