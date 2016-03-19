@@ -1,66 +1,72 @@
 "use strict"
 
-var populatePage = (sentInventory) => {
+var CarLot = ((quiz) => {
 
-  // Gets the main container div for where the cards will be stored
-  let carCardContainer = document.getElementById("car-card-container");
+  quiz.populatePage = (sentInventory) => {
 
-  // Initializes the string where each cars' information will be stored
-  let carCardString = "";
+    // Gets the main container div for where the cards will be stored
+    let carCardContainer = document.getElementById("car-card-container");
 
-  // Loop over each car in the inventory and populate the page
-  for (let i = 0; i < sentInventory.length; i++) {
+    // Initializes the string where each cars' information will be stored
+    let carCardString = "";
 
-    // Starting at car card 0, for every three cars cards in the inventory,
-    //  a new div with the class of "row" will be add to the DOM.
-    //  This keeps "3 columns" working on most larger screens
-    if (i % 3 === 0) {
-      var carCardRow = document.createElement("div"); // This needs to be accessible outside the block
-      carCardRow.classList.add("row");
-      carCardContainer.appendChild(carCardRow);
-    }
+    // Loop over each car in the inventory and populate the page
+    for (let i = 0; i < sentInventory.length; i++) {
 
-    // Builds the card for each car
-    let carCard = document.createElement("div");
-    carCard.id = `car-card-${i}`;
-    carCard.classList.add("col-md-4");
-    carCard.classList.add("border-width-3");
-    carCard.classList.add("bg-warning");
-    carCardRow.appendChild(carCard);
+      // Starting at car card 0, for every three cars cards in the inventory,
+      //  a new div with the class of "row" will be add to the DOM.
+      //  This keeps "3 columns" working on most larger screens
+      if (i % 3 === 0) {
+        var carCardRow = document.createElement("div"); // This needs to be accessible outside the block hence the 'var'
+        carCardRow.classList.add("row");
+        carCardContainer.appendChild(carCardRow);
+      }
 
-    // This just sets the "current car" element in the array to a shorter, 
-    //  easier to access variable.
-    let curCar = sentInventory[i];
+      // Builds the card for each car
+      let carCard = document.createElement("div");
+      carCard.id = `car-card-${i}`;
+      carCard.classList.add("col-md-4");
+      carCard.classList.add("border-width-3");
+      carCard.classList.add("bg-warning");
+      carCardRow.appendChild(carCard);
 
-    // Makes the Car Title string
-    carCardString = `<h3 class="quicksand-font">${curCar["year"]} ${curCar["make"]} ${curCar["model"]}</h3>`;
+      // This just sets the "current car" element in the array to a shorter, 
+      //  easier to access variable.
+      let curCar = sentInventory[i];
 
-    // Adds the price info to the string
-    carCardString += `<p>Yours for only: <span class='text-bigger'>$${curCar["price"]}</span></p>`;
+      // Makes the Car Title string
+      carCardString = `<h3 class="quicksand-font">${curCar["year"]} ${curCar["make"]} ${curCar["model"]}</h3>`;
 
-    // Sets the car card border color to the color of the car and also
-    //  adds the color info to the car string
-    carCard.setAttribute("style", `border-color: ${curCar['color']}`);
-    carCardString += `<p>This car comes in beautiful <span class="underline-text-color" style="color:${curCar['color']}">${curCar['color']}</span></p>`;
+      // Adds the price info to the string
+      carCardString += `<p>Yours for only: <span class='text-bigger'>$${curCar["price"]}</span></p>`;
 
-    // This checks to see if the car is purchased and sets the 
-    //  string added to the overall car string appropriately
-    if (curCar["purchased"] === true) {
-      carCardString += `<p>We're sorry but this car is <strong>NOT</strong> available</p>`;
-    } else {
-      carCardString += `<p>BUY NOW!<br/> Supplies are limited!</p>`;
+      // Sets the car card border color to the color of the car and also
+      //  adds the color info to the car string
+      carCard.setAttribute("style", `border-color: ${curCar['color']}`);
+      carCardString += `<p>This car comes in beautiful <span class="underline-text-color" style="color:${curCar['color']}">${curCar['color']}</span></p>`;
+
+      // This checks to see if the car is purchased and sets the 
+      //  string added to the overall car string appropriately
+      if (curCar["purchased"] === true) {
+        carCardString += `<p>We're sorry but this car is <strong>NOT</strong> available</p>`;
+      } else {
+        carCardString += `<p>BUY NOW!<br/> Supplies are limited!</p>`;
+      };
+
+      // Adds the car description to the car string.
+      carCardString += `<p class="aligned-left"><span class="text-big">Description:</span> ${curCar['description']}</p>`;
+
+      // Inserts the car string into the current car card.
+      carCard.innerHTML += carCardString;
     };
 
-    // Adds the car description to the car string.
-    carCardString += `<p class="aligned-left"><span class="text-big">Description:</span> ${curCar['description']}</p>`;
+    // The event listeners are added once the DOM is loaded and populated
+    CarLot.activateEvents();
+  }
 
-    // Inserts the car string into the current car card.
-    carCard.innerHTML += carCardString;
-  };
+  return quiz;
 
-  // The event listeners are added once the DOM is loaded and populated
-  CarLot.activateEvents();
-}
+})(CarLot || {});
 
 // Loads the inventory, and sends the callback function to populatePage
-CarLot.loadInventory(populatePage);
+CarLot.loadInventory(CarLot.populatePage);
