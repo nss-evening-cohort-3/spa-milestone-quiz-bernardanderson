@@ -1,0 +1,51 @@
+/*Styling mainly for Bootstrap Nav Bar*/
+body {
+  box-sizing: border-box;
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+/*Styling for the enlarged border selected car card*/
+.border-width-6 {
+  border-width: 6px;
+  border-style: solid;
+  border-radius: 5px;
+  text-align: center;
+  height: 24rem;
+}
+
+/*Styling for the decreased car card border*/
+.border-width-3 {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 5px;
+  text-align: center;
+  height: 24rem;
+}
+
+/*Special Font for the Card Titles*/
+.quicksand-font {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
+/*Keep the description text aligned to the left*/
+.aligned-left {
+  text-align: left;
+}
+
+/*Makes certain text items big*/
+.text-big {
+  font-size: 1.8rem;
+}
+
+/*Makes certain text items bigger*/
+.text-bigger {
+  font-size: 2.2rem;
+}
+
+/*Gives styling to the car color font*/
+.underline-text-color {
+  text-decoration: underline;
+  font-weight: bold;
+}

@@ -1,0 +1,43 @@
+{
+  "cars": [{
+    "make": "Nissan",
+    "model": "Rogue",
+    "year": "2006",
+    "price": "8999",
+    "color": "FireBrick",
+    "purchased": false,
+    "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats."
+  }, {
+    "make": "Mazda",
+    "model": "6",
+    "year": "2011",
+    "price": "13999",
+    "color": "Blue",
+    "purchased": true,
+    "description": "This 2011 Mazda 6 has 45000 miles on it. Leather seats, missing drivers side mirror."
+  }, {
+    "make": "Toyota",
+    "model": "Celica",
+    "year": "1990",
+    "price": "1200",
+    "color": "Crimson",
+    "purchased": false,
+    "description": "Although older, this celica has aged well. Runs, has all doors, no rust, 85000 miles."
+  }, {
+    "make": "Chrysler",
+    "model": "LeBaron",
+    "year": "1984",
+    "price": "399",
+    "color": "DarkGreen",
+    "purchased": false,
+    "description": "This classic LeBaron has only minor rust, a missing bumper and 186000 miles."
+  }, {
+    "make": "Subaru",
+    "model": "Legacy",
+    "year": "1997",
+    "price": "499",
+    "color": "DarkOrchid",
+    "purchased": true,
+    "description": "Having seen better days, this Legacy has a dragging muffler, cracked rear axle but still runs."
+  }]
+}
